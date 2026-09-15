@@ -1,0 +1,77 @@
+body{
+    margin: 50px;
+}
+
+.BackgroundImage{
+    height: 100vh;
+    background-image: url(/IMAGES/LOGINPAGE_BG.png);
+    background-size: cover; /* para ma cover nung image yung buong site */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.title{
+    font-family: 'Orbitron';
+}
+
+.sub-title{
+    font-family: 'Manrope';
+    font-size: 75px;
+    margin-left: 100px;
+    margin-right: auto;
+}
+
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.2); /* transparent white */
+    backdrop-filter: blur(15px); /* blur effect sa likod */
+    -webkit-backdrop-filter: blur(15px); /* para sa Safari support */
+    margin-right: 70px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    height: 600px;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.content{
+    margin-top: 100px;
+    font-family: 'Manrope';
+}
+
+.login-btn{
+    font-family: 'Manrope';
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 340px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+}
