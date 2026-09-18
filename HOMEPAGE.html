@@ -4,6 +4,9 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="HOMEPAGE.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -17,6 +20,11 @@
               <nav>
                      <h1 class="title">AutoBayPh</h1>
                      <ul>
+                            <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Search...">
+                                   <button id="searchBtn">🔍 Search</button>
+                                   </div>
+                            <div id="searchResults"></div>
                             <li><a href="HOMEPAGE.html">Home</a></li>
                             <li class="dropdown">
                                    <a href="#" class="dropdown-toggle">Categories ▾</a>
@@ -30,7 +38,6 @@
                                    </ul>
                             </li>
                             <li><a href="#">Cart</a></li>
-                            <li><a href="#">Search</a></li>
                             <li><a href="ABOUTPAGE.html">About</a></li>
                             <li><a href="#">Settings</a></li>
                             <!-- 
@@ -41,6 +48,11 @@
                             -->
                      </ul>
               </nav>
+              <div class="H_image-container">
+                     <h1>Where your journey <br> begins.</h1>
+                     <a href="ABOUTPAGE.html" class="learnmorebtn">Learn More</a>
+              <img src = "IMAGES/HOMEPAGE_IMAGE.png" alt="HomePage Image" class="H_image">
+              </div>
               <div class="banner">
                      <div class="slide-wrapper">
                             <div class="slider">
@@ -61,8 +73,31 @@
                             </div>
                      </div>
               </div>
+              <div>
+                     <marquee behavior="scroll" scrollamount = "50" width="100%" direction="right"><h1>Welcome to AutoBayPh</h1></marquee>
+              </div> 
        </header>
-
+       <Content>
+              <h1 id="Category" class="Carousel_Title "><a href="BRANDPAGE.html">BRANDS</a></h1>
+              <div class="carousel">
+                     <div class="group">
+                            <div class="card"><img src = "IMAGES/TOYOTA_LOGO.png" alt="TOYOTA Logo"></div>
+                            <div class="card"><img src = "IMAGES/BYD_LOGO.png" alt="BYD Logo"></div>
+                            <div class="card"><img src = "IMAGES/GEELY_LOGO.png" alt="GEELY Logo"></div>
+                            <div class="card"><img src = "IMAGES/MITSUBISHI_LOGO.png" alt="MITSUBISHI Logo"></div>
+                            <div class="card"><img src = "IMAGES/SUZUKI_LOGO.png" alt="SUZUKI Logo"></div>
+                            <div class="card"><img src = "IMAGES/HONDA_LOGO.png" alt="HONDA Logo"></div>
+                     </div>
+                     <div aria-hidden class="group">
+                            <div class="card"><img src = "IMAGES/TOYOTA_LOGO.png" alt="TOYOTA Logo"></div>
+                            <div class="card"><img src = "IMAGES/BYD_LOGO.png" alt="BYD Logo"></div>
+                            <div class="card"><img src = "IMAGES/GEELY_LOGO.png" alt="GEELY Logo"></div>
+                            <div class="card"><img src = "IMAGES/MITSUBISHI_LOGO.png" alt="MITSUBISHI Logo"></div>
+                            <div class="card"><img src = "IMAGES/SUZUKI_LOGO.png" alt="SUZUKI Logo"></div>
+                            <div class="card"><img src = "IMAGES/HONDA_LOGO.png" alt="HONDA Logo"></div>
+                     </div>
+              </div>
+       </Content>
        <script>
               let currentSlide = 0;
               const slider = document.querySelector('.slider');

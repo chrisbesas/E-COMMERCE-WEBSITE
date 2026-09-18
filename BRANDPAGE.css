@@ -1,6 +1,11 @@
 body{
     margin: 0;
-        background: black;
+    background: linear-gradient(
+        to right,
+        white,
+        gray,
+        white
+    );
 }
 
 .title {
@@ -9,7 +14,6 @@ body{
     color: white;
     font-family: 'Orbitron';
 }
-
 
 nav {
     height: 80px;
@@ -55,29 +59,6 @@ nav ul li.dropdown .dropdown-menu li a {
     white-space: nowrap;
 }
 
-nav ul li.dropdown .dropdown-menu li a:hover {
-    background-color: rgba(255,255,255,0.1);
-    width: 70%;
-}
-
-ul {
-    display: flex;
-    margin-right: 30px;
-    flex-direction: row;
-    align-items: center;
-}
-
-li {
-    font-family: 'Manrope';
-    font-size: 20px;
-    padding: 0 20px;
-    list-style: none;
-}
-
-li a {
-    color: white;
-    text-decoration: none;
-}
 
 /* SEARCH BAR */
 
@@ -112,55 +93,27 @@ nav ul li.dropdown .dropdown-menu li a:hover {
     width: 70%;
 }
 
-content {
+ul {
     display: flex;
+    margin-right: 30px;
+    flex-direction: row;
     align-items: center;
-    gap: 150px;
 }
 
-content h1 {
-    font-family: 'Orbitron';
-    width: 100%;
-    font-size: 7rem;
-    position: absolute;
-    top: 22%;
-    left: 430px;
-    transform: translateY(-50%);
-    z-index: 2;
-    color: white;
-    margin: 0;
-    text-shadow: 2px 2px 100px rgb(255, 253, 253);
-}
-
-.imagecontainer img {
-    border-radius: 10px;
-    margin-top: 100px;
-    display: block;
-    margin-left: 200px;
-    width: 550px;
-    height: 550px;
-    position: relative;
-    z-index: 1;
-}
-
-.imagecontainer {
-    position: relative;
-    display: block;
-}
-
-
-.about-text {
-
-    width: 400px;
-    margin-top: 150px;
-}   
-
-.about-text p {
-    color: white;
-    text-shadow: 2px 2px 50px white;
-    text-align: justify;
+li {
     font-family: 'Manrope';
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: 20px;
+    padding: 0 20px;
+    list-style: none;
 }
 
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+.H-Brandpage {
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron';
+}
