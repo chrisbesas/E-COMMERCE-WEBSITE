@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="style1.css">
+       <title>Document</title>
+</head>
+<body>
+       <nav>
+                     <div class="off_list_menu">
+                     <ul>
+                            <li>Home</li>
+                            <li>Settings</li>
+                            <li>Browse Cars</li>
+                            <li>Brands</li>
+                            <li>Deals & Offers</li>
+                            <li>Favorites</li>
+                            <li>Cart</li>
+                            <li>Account</li>
+                            <li>Contact us</li>
+                            <li>About Us</li>
+                     </ul>
+              </div>
+              <div class="hamburger_menu">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+              </div>
+       </nav>
+       <script>
+              const hamMenu = document.querySelector (`.hamburger_menu`);
+              const offListMenu = document.querySelector (`.off_list_menu`);
+
+              hamMenu.addEventListener(`click`,()=>{
+                     hamMenu.classList.toggle(`active`);
+                     offListMenu.classList.toggle(`active`);
+              })
+       </script>
+</body>
+</html>
