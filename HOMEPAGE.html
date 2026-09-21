@@ -13,6 +13,9 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
        <title>AutoBayPh | Home</title>
 </head>
 <body>
@@ -96,8 +99,8 @@
                      <marquee behavior="scroll" scrollamount = "50" width="100%" direction="right"><h1>Welcome to AutoBayPh</h1></marquee>
               </div> 
        </header>
-       <Content>
-              <h1 id="Category" class="Carousel_Title "><a href="BRANDPAGE.html">BRANDS</a></h1>
+<Content>
+       <h1 id="Category" class="Carousel_Title "><a href="BRANDPAGE.html">BRANDS</a></h1>
               <div class="carousel">
                      <div class="group">
                             <div class="card"><img src = "IMAGES/TOYOTA_LOGO.png" alt="TOYOTA Logo"></div>
@@ -115,6 +118,33 @@
                             <div class="card"><img src = "IMAGES/SUZUKI_LOGO.png" alt="SUZUKI Logo"></div>
                             <div class="card"><img src = "IMAGES/HONDA_LOGO.png" alt="HONDA Logo"></div>
                      </div>
+              </div>
+
+              <div class="dark-zone" id="darkZone">
+              <div class="Statement">
+                     <p>
+                            AutoBayPh is a car e-commerce website created to provide customers with a simple, convenient, and user-friendly way to explore different vehicles online. The website features various car brands and models, allowing users to browse and discover vehicles based on their preferences. Customers can view important information about each car, explore different designs and options, and compare their choices before making a decision. AutoBayPh is designed to make the process of finding a car more accessible by bringing different vehicles and brands together in one platform. With its organized layout and easy-to-use interface, the website aims to provide a smooth browsing experience for anyone looking for their ideal car.
+                     </p>
+              </div>
+              <h1 class="Category_Title">Sedan</h1>
+              <div class="sedan" id = "list">
+                     <div class="car-item">
+                            <img class="car-base" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid.png" data-nobg="/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid">
+                            <img class="car-hover" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid">
+                     </div>
+                     <div class="car-item">
+                            <img class="car-base" src = "/SEDAN/SEDAN BYD Seal 5 DM-i.png" alt="SEDAN BYD Seal 5 DM-i">
+                            <img class="car-hover" src = "/SEDAN/SEDAN BYD Seal 5 DM-i NOBG.png" alt="SEDAN BYD Seal 5 DM-i">
+                     </div>
+                     <div class="car-item">
+                            <img class="car-base" src = "/SEDAN/SEDAN Toyota Vios.png" alt="SEDAN Toyota Vios">
+                            <img class="car-hover" src = "/SEDAN/SEDAN Toyota Vios NOBG.png" alt="SEDAN Toyota Vios">
+                     </div>
+                     <div class="car-item">
+                            <img class="car-base" src = "/SEDAN/SEDAN Geely Emgrand.png" alt="SEDAN Geely Emgrand">
+                            <img class="car-hover" src = "/SEDAN/SEDAN Geely Emgrand NOBG.png" alt="SEDAN Geely Emgrand">
+                     </div>
+              </div>
               </div>
        </Content>
        <script>
@@ -136,6 +166,24 @@
               }
 
               setInterval(nextSlide, 3000); // auto-slide every 3 seconds
+
+              <!-- BLACK BG MULA STATEMENT PAPUNTANG DULO -->
+
+              const darkZone = document.getElementById('darkZone');
+
+              function checkDarkZone() {
+                     const rect = darkZone.getBoundingClientRect();
+                     if (rect.top <= 0) {
+                            darkZone.classList.add('active');
+                            document.body.classList.add('dark-bg');
+                     } else {
+                            darkZone.classList.remove('active');
+                            document.body.classList.remove('dark-bg');
+                     }
+              }
+
+              window.addEventListener('scroll', checkDarkZone);
+              checkDarkZone(); // initial check pag load ng page
 
 
               <!-- HAMBURGER MENU -->
