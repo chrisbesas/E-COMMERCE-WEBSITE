@@ -45,6 +45,18 @@ nav ul li.dropdown:hover .dropdown-menu {
     display: block;
 }
 
+.dropdown-menu li:hover {
+    border-bottom: none;
+}
+
+nav ul li {
+    transition: .3s ease;
+}
+
+nav ul li:hover{
+    border-bottom: 3px solid red;
+}
+
 nav ul li.dropdown .dropdown-menu li {
     width: 100%;
 }
@@ -95,7 +107,6 @@ nav ul li.dropdown .dropdown-menu li a {
 }
 
 nav {
-    padding: 1rem;
     display: flex;
     background-color: black;
 }
@@ -361,10 +372,18 @@ li a {
 
 /* !! TABLE */
 
+.carDetails img{
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .specsTable {
     text-align: center;
+    transform: translateY(-10%);
     width: 50%;
-    margin: 50px auto;
+    margin: 0 auto;
     border-collapse: collapse;
     font-family: 'Manrope';
     color: white;

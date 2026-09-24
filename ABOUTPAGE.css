@@ -1,6 +1,6 @@
 body{
     margin: 0;
-        background: black;
+    background-color: rgb(26, 26, 26);
 }
 
 .title {
@@ -41,8 +41,21 @@ nav ul li.dropdown .dropdown-menu {
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+
 nav ul li.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+.dropdown-menu li:hover {
+    border-bottom: none;
+}
+
+nav ul li {
+    transition: .3s ease;
+}
+
+nav ul li:hover{
+    border-bottom: 3px solid red;
 }
 
 nav ul li.dropdown .dropdown-menu li {

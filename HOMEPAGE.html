@@ -22,6 +22,9 @@
        <title>AutoBayPh | Home</title>
 </head>
 <body>
+       <a href="#" id="scrollTopBtn" onclick="scrollToTop(); return false;">
+              <img src="IMAGES/upButton.png" alt="upButton">
+       </a>
        <header>
               <nav>
                      <div class="off_list_menu">
@@ -123,58 +126,70 @@
                             AutoBayPh is a car e-commerce website created to provide customers with a simple, convenient, and user-friendly way to explore different vehicles online. The website features various car brands and models, allowing users to browse and discover vehicles based on their preferences. Customers can view important information about each car, explore different designs and options, and compare their choices before making a decision. AutoBayPh is designed to make the process of finding a car more accessible by bringing different vehicles and brands together in one platform. With its organized layout and easy-to-use interface, the website aims to provide a smooth browsing experience for anyone looking for their ideal car.
                      </p>
               </div>
-              <h1 class="Category_Title">Sedan</h1>
-              <div class="list" id = "sedan">    
-                     <div class="car-item">
-                            <a href="SUZUKI/SEDAN/SUZUKI_DZIRE_Hybrid.html"><img class="car-base" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid.png" data-nobg="/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid"></a>
-                            <p class="car-name">SUZUKI DZIRE Hybrid</p>
-                            <p class="car-price">₱700,000</p>
-                            <p class="car-oldprice"><del>P750,000</del></p>
-                            <p class="car-desc">a compact and efficient car for daily driving.</p>
-                            <p class="car-type">Automatic CVT</p>
-                            <p class="car-category">Sedan</p>
-                            <p class="car-tankCapacity">Fuel tank: 37 L</p>
+              
+              <nav class = "listOfCategory">
+                     <button onclick = "showCategory('sedan')">Sedan</button>
+                     <button onclick = "showCategory('hatchback')">Hatchback</button>
+                     <button onclick = "showCategory('pickup truck')">Pickup Truck</button>
+                     <button onclick = "showCategory('van')">Van</button>
+                     <button onclick = "showCategory('suv')">SUV</button>
+              </nav>
+              <hr class="line">
+              <div class="CategoryContent">
+                     <div class = "category sedan"> 
+                            <h1 class="Category_Title">Sedan</h1>
+                            <div class="list" id = "sedan">    
+                                   <div class="car-item">
+                                          <a href="SUZUKI/SEDAN/SUZUKI_DZIRE_Hybrid.html"><img class="car-base" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid.png" data-nobg="/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid"></a>
+                                          <p class="car-name">SUZUKI DZIRE Hybrid</p>
+                                          <p class="car-price">₱700,000</p>
+                                          <p class="car-oldprice"><del>P750,000</del></p>
+                                          <p class="car-desc">a compact and efficient car for daily driving.</p>
+                                          <p class="car-type">Automatic CVT</p>
+                                          <p class="car-category">Sedan</p>
+                                          <p class="car-tankCapacity">Fuel tank: 37 L</p>
 
-                            <img class="car-hover" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid">
-                     </div>
-                     <div class="car-item">
-                            <img class="car-base" src = "/SEDAN/SEDAN BYD Seal 5 DM-i.png" alt="SEDAN BYD Seal 5 DM-i">
-                            <p class="car-name">BYD SEAL 5 DM-i</p>
-                            <p class="car-price">₱900,000</p>
-                            <p class="car-oldprice"><del>P948,000</del></p>
-                            <p class="car-desc">a compact and efficient car for daily driving.</p>
-                            <p class="car-type">Electric CVT</p>
-                            <p class="car-category" id="BYD_category">Sedan</p>
-                            <p class="car-tankCapacity">Battery: 7.68 kWh</p>
+                                          <img class="car-hover" src = "/SEDAN/SEDAN Suzuki Dzire Hybrid NOBG.png" alt="SEDAN Suzuki Dzire Hybrid">
+                                   </div>
+                                   <div class="car-item">
+                                          <img class="car-base" src = "/SEDAN/SEDAN BYD Seal 5 DM-i.png" alt="SEDAN BYD Seal 5 DM-i">
+                                          <p class="car-name">BYD SEAL 5 DM-i</p>
+                                          <p class="car-price">₱900,000</p>
+                                          <p class="car-oldprice"><del>P948,000</del></p>
+                                          <p class="car-desc">a compact and efficient car for daily driving.</p>
+                                          <p class="car-type">Electric CVT</p>
+                                          <p class="car-category" id="BYD_category">Sedan</p>
+                                          <p class="car-tankCapacity">Battery: 7.68 kWh</p>
 
-                            <img class="car-hover" src = "/SEDAN/SEDAN BYD Seal 5 DM-i NOBG.png" alt="SEDAN BYD Seal 5 DM-i">
-                     </div>
-                     <div class="car-item">
-                            <img class="car-base" src = "/SEDAN/SEDAN Toyota Vios.png" alt="SEDAN Toyota Vios">
-                            <p class="car-name">TOYOTA VIOS 2026</p>
-                            <p class="car-price">₱1,000,000</p>
-                            <p class="car-oldprice"><del>P1,039,000</del></p>
-                            <p class="car-desc">a compact and efficient car for daily driving.</p>
-                            <p class="car-type">CVT/5-SPEED MANUAL</p>
-                            <p class="car-category" id="TOYOTA_category">Sedan</p>
-                            <p class="car-tankCapacity">Fuel tank : 42 L</p>
+                                          <img class="car-hover" src = "/SEDAN/SEDAN BYD Seal 5 DM-i NOBG.png" alt="SEDAN BYD Seal 5 DM-i">
+                                   </div>
+                                   <div class="car-item">
+                                          <img class="car-base" src = "/SEDAN/SEDAN Toyota Vios.png" alt="SEDAN Toyota Vios">
+                                          <p class="car-name">TOYOTA VIOS 2026</p>
+                                          <p class="car-price">₱1,000,000</p>
+                                          <p class="car-oldprice"><del>P1,039,000</del></p>
+                                          <p class="car-desc">a compact and efficient car for daily driving.</p>
+                                          <p class="car-type">CVT/5-SPEED MANUAL</p>
+                                          <p class="car-category" id="TOYOTA_category">Sedan</p>
+                                          <p class="car-tankCapacity">Fuel tank : 42 L</p>
 
-                            <img class="car-hover" src = "/SEDAN/SEDAN Toyota Vios NOBG.png" alt="SEDAN Toyota Vios">
-                     </div>
-                     <div class="car-item">
-                            <img class="car-base" src = "/SEDAN/SEDAN Geely Emgrand.png" alt="SEDAN Geely Emgrand">
-                            <p class="car-name">GEELY EMGRAND</p>
-                            <p class="car-price">₱850,000</p>
-                            <p class="car-oldprice"><del>P949,000</del></p>
-                            <p class="car-desc">a compact and efficient car for daily driving.</p>
-                            <p class="car-type">Automatic CVT</p>
-                            <p class="car-category">Sedan</p>
-                            <p class="car-tankCapacity">Fuel tank : 50 L</p>
+                                          <img class="car-hover" src = "/SEDAN/SEDAN Toyota Vios NOBG.png" alt="SEDAN Toyota Vios">
+                                   </div>
+                                   <div class="car-item">
+                                          <img class="car-base" src = "/SEDAN/SEDAN Geely Emgrand.png" alt="SEDAN Geely Emgrand">
+                                          <p class="car-name">GEELY EMGRAND</p>
+                                          <p class="car-price">₱850,000</p>
+                                          <p class="car-oldprice"><del>P949,000</del></p>
+                                          <p class="car-desc">a compact and efficient car for daily driving.</p>
+                                          <p class="car-type">Automatic CVT</p>
+                                          <p class="car-category">Sedan</p>
+                                          <p class="car-tankCapacity">Fuel tank : 50 L</p>
 
-                            <img class="car-hover" src = "/SEDAN/SEDAN Geely Emgrand NOBG.png" alt="SEDAN Geely Emgrand">
+                                          <img class="car-hover" src = "/SEDAN/SEDAN Geely Emgrand NOBG.png" alt="SEDAN Geely Emgrand">
+                                   </div>
+                            </div>
+                            </div>
                      </div>
-              </div>
-              </div>
        </Content>
        <script>
               let currentSlide = 0;
@@ -196,8 +211,10 @@
 
               setInterval(nextSlide, 3000); // auto-slide every 3 seconds
 
-              <!-- BLACK BG MULA STATEMENT PAPUNTANG DULO -->
 
+
+
+              <!-- BLACK BG MULA STATEMENT PAPUNTANG DULO -->
               const darkZone = document.getElementById('darkZone');
 
               function checkDarkZone() {
@@ -215,6 +232,9 @@
               checkDarkZone(); // initial check pag load ng page
 
 
+
+
+
               <!-- HAMBURGER MENU -->
 
               const hamMenu = document.querySelector (`.hamburger_menu`);
@@ -223,6 +243,37 @@
                      hamMenu.classList.toggle(`active`);
                      offListMenu.classList.toggle(`active`);
               })
+
+
+
+
+              <!-- CATEGORY CONTENT -->
+              function showCategory(cat) {
+                            document.querySelectorAll('.category').forEach(el => {
+                            el.style.display = el.classList.contains(cat) ? 'block' : 'none';
+                     });
+              }
+
+
+
+
+              <!-- SCROLL TO TOP -->
+              const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+              window.onscroll = function() {
+                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollTopBtn.style.display = "block";
+                     } else {
+                            scrollTopBtn.style.display = "none";
+                     }
+              };
+
+              function scrollToTop() {
+                     window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                     });
+              }
        </script>
 </body>
 </html>
