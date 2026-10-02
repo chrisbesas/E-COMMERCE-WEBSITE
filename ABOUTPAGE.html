@@ -14,19 +14,39 @@
 </head>
 <body>
        <header>
+              <div class="off_list_menu">
+                     <div class="close_menu">&times;</div>
+              <ul>
+                     <li>Home</li>
+                     <li>Settings</li>
+                     <li>Browse Cars</li>
+                     <li>Brands</li>
+                     <li>Deals & Offers</li>
+                     <li>Favorites</li>
+                     <li>Cart</li>
+                     <li>Account</li>
+                     <li>Contact us</li>
+                     <li>About Us</li>
+              </ul>
+              </div>
               <nav>
+                     <div class="hamburger_menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                     </div>
                      <h1 class="title">AutoBayPh</h1>
-                     <ul>
-                            <div class="search-container">
+                     <div class="search-container">
                             <input type="text" id="searchInput" placeholder="Search...">
-                                   <button id="searchBtn">🔍 Search</button>
-                                   </div>
-                            <div id="searchResults"></div>
+                            <button id="searchBtn">Search</button>
+                     </div>
+                     <div id="searchResults"></div>
+                     <ul>
                             <li><a href="HOMEPAGE.html">Home</a></li>
                             <li class="dropdown">
                                    <a href="#" class="dropdown-toggle">Categories ▾</a>
                                    <ul class="dropdown-menu">
-                                          <li><a href="#">Sedan</a></li>
+                                          <li><a href="#sedan">Sedan</a></li>
                                           <li><a href="#">SUV</a></li>
                                           <li><a href="#">Pickup Truck</a></li>
                                           <li><a href="#">Hatchback</a></li>
@@ -34,17 +54,12 @@
                                           <li><a href="#">Motorcycle</a></li>
                                    </ul>
                             </li>
-                            <li><a href="#">Cart</a></li>
+                            <li><a href="CARTPAGE.html">Cart</a></li>
                             <li><a href="ABOUTPAGE.html">About</a></li>
                             <li><a href="#">Settings</a></li>
-                            <!-- 
-                            <li><a href="#">Login/Register</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">My Account</a></li>
-                                   SOON TO ADD UNDER SETTINGS
-                            -->
                      </ul>
               </nav>
+       </header>
        <content>
               <div class="imagecontainer">
                      <h1>ABOUT US</h1>
@@ -73,5 +88,21 @@
        <div class="pdfContainer">
               <iframe src = "warranty_certificate.pdf" width = 1000 height = "1000"></iframe>
        </div>
+
+       <script>
+              const hamMenu = document.querySelector(`.hamburger_menu`);
+              const offListMenu = document.querySelector(`.off_list_menu`);
+              const closeMenu = document.querySelector(`.close_menu`);
+
+              hamMenu.addEventListener(`click`, () => {
+                     hamMenu.classList.toggle(`active`);
+                     offListMenu.classList.toggle(`active`);
+              });
+
+              closeMenu.addEventListener(`click`, () => {
+                     hamMenu.classList.remove(`active`);
+                     offListMenu.classList.remove(`active`);
+              });
+       </script>
 </body>
 </html>

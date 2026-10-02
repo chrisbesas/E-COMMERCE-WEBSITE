@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Checkout | AutoBayPh</title>
+       <link rel="stylesheet" href="PAYMENTPAGE.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+       <header class="topBar">
+              <a href="HOMEPAGE.html" class="logo">AutoBayPh</a>
+              <a href="CARTPAGE.html" class="backLink">&larr; Back to Cart</a>
+       </header>
+
+       <main class="page">
+              <p class="eyebrow">Reservation checkout</p>
+              <h1 class="pageTitle">Complete your reservation</h1>
+              <p class="lead">Ilagay ang details mo, tapos piliin kung paano mo babayaran ang reservation fee.</p>
+
+              <div class="layout">
+                     <form id="payForm" novalidate>
+
+                            <!-- PERSONAL DETAILS -->
+                            <section class="block">
+                                   <h2>Your details</h2>
+
+                                   <h3 class="groupLabel">Contact</h3>
+                                   <div class="fields">
+                                          <label class="f wide">Full name
+                                                 <input type="text" id="fullName" autocomplete="name" placeholder="Juan Dela Cruz">
+                                          </label>
+                                          <label class="f">Mobile number
+                                                 <input type="tel" id="mobile" autocomplete="tel" placeholder="09123456789">
+                                          </label>
+                                          <label class="f">Email address
+                                                 <input type="email" id="email" autocomplete="email" placeholder="juan@email.com">
+                                          </label>
+                                   </div>
+
+                                   <h3 class="groupLabel">Address</h3>
+                                   <div class="fields">
+                                          <label class="f wide">House no. and street
+                                                 <input type="text" id="street" autocomplete="address-line1" placeholder="123 Rizal Street">
+                                          </label>
+                                          <label class="f">Barangay
+                                                 <input type="text" id="barangay" placeholder="Barangay San Antonio">
+                                          </label>
+                                          <label class="f">City / Municipality
+                                                 <input type="text" id="city" autocomplete="address-level2" placeholder="San Pedro">
+                                          </label>
+                                          <label class="f">Province
+                                                 <input type="text" id="province" autocomplete="address-level1" placeholder="Laguna">
+                                          </label>
+                                          <label class="f">ZIP code
+                                                 <input type="text" id="zip" inputmode="numeric" autocomplete="postal-code" placeholder="4023" maxlength="4">
+                                          </label>
+                                   </div>
+                            </section>
+
+                            <!-- PAYMENT METHODS -->
+                            <section class="block">
+                                   <h2>Payment method</h2>
+                                   <div class="methods">
+
+                                          <div class="method">
+                                                 <label class="methodHead">
+                                                        <input type="radio" name="payMethod" value="GCash">
+                                                        <img class="payImg" src="IMAGES/GCASH.png" alt="GCash">
+                                                        <span class="methodText">
+                                                               <span class="methodName">GCash</span>
+                                                               <span class="methodDesc">Pay with a QR code</span>
+                                                        </span>
+                                                 </label>
+                                                 <div class="detail">
+                                                        <p class="note">Pagkatapos mong i-confirm, ipapakita ang GCash QR code at reference number para sa reservation fee mo.</p>
+                                                 </div>
+                                          </div>
+
+                                          <div class="method">
+                                                 <label class="methodHead">
+                                                        <input type="radio" name="payMethod" value="Maya">
+                                                        <img class="payImg" src="IMAGES/MAYA_LOGO.png" alt="Maya">
+                                                        <span class="methodText">
+                                                               <span class="methodName">Maya</span>
+                                                               <span class="methodDesc">Pay with a QR code</span>
+                                                        </span>
+                                                 </label>
+                                                 <div class="detail">
+                                                        <p class="note">Pagkatapos mong i-confirm, ipapakita ang Maya QR code at reference number para sa reservation fee mo.</p>
+                                                 </div>
+                                          </div>
+
+                                          <div class="method">
+                                                 <label class="methodHead">
+                                                        <input type="radio" name="payMethod" value="Card">
+                                                        <img class="payImg" src="IMAGES/CARD_LOGO.png" alt="Credit or debit card">
+                                                        <span class="methodText">
+                                                               <span class="methodName">Credit / Debit Card</span>
+                                                               <span class="methodDesc">Visa or Mastercard</span>
+                                                        </span>
+                                                 </label>
+                                                 <div class="detail">
+                                                        <p class="hint">Card type</p>
+                                                        <div class="choices">
+                                                               <label class="choice">
+                                                                      <input type="radio" name="brand" value="Visa">
+                                                                      <div class="tile">
+                                                                             <img class="payImg" src="IMAGES/VISA_LOGO.png" alt="Visa">
+                                                                             <b>Visa</b>
+                                                                      </div>
+                                                               </label>
+                                                               <label class="choice">
+                                                                      <input type="radio" name="brand" value="Mastercard">
+                                                                      <div class="tile">
+                                                                             <img class="payImg" src="IMAGES/MASTERCARD_LOGO.png" alt="Mastercard">
+                                                                             <b>Mastercard</b>
+                                                                      </div>
+                                                               </label>
+                                                        </div>
+
+                                                        <div class="fields cardForm" id="cardForm" hidden>
+                                                               <label class="f wide">Card number
+                                                                      <input type="text" id="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                                               </label>
+                                                               <label class="f wide">Cardholder name
+                                                                      <input type="text" id="cardName" autocomplete="cc-name" placeholder="Juan Dela Cruz">
+                                                               </label>
+                                                               <label class="f">Expiration date
+                                                                      <input type="text" id="cardExp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5">
+                                                               </label>
+                                                               <label class="f">CVV
+                                                                      <input type="password" id="cardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4">
+                                                               </label>
+                                                        </div>
+                                                 </div>
+                                          </div>
+
+                                          <div class="method">
+                                                 <label class="methodHead">
+                                                        <input type="radio" name="payMethod" value="Bank">
+                                                        <img class="payImg" src="IMAGES/BANK_LOGO.png" alt="Bank transfer">
+                                                        <span class="methodText">
+                                                               <span class="methodName">Bank Transfer</span>
+                                                               <span class="methodDesc">BPI, BDO or Metrobank</span>
+                                                        </span>
+                                                 </label>
+                                                 <div class="detail">
+                                                        <p class="hint">Bank</p>
+                                                        <div class="choices">
+                                                               <label class="choice">
+                                                                      <input type="radio" name="bank" value="BPI">
+                                                                      <div class="tile">
+                                                                             <img class="payImg" src="IMAGES/BPI_LOGO.png" alt="BPI">
+                                                                             <b>BPI</b>
+                                                                      </div>
+                                                               </label>
+                                                               <label class="choice">
+                                                                      <input type="radio" name="bank" value="BDO">
+                                                                      <div class="tile">
+                                                                             <img class="payImg" src="IMAGES/BDO_LOGO.png" alt="BDO">
+                                                                             <b>BDO</b>
+                                                                      </div>
+                                                               </label>
+                                                               <label class="choice">
+                                                                      <input type="radio" name="bank" value="Metrobank">
+                                                                      <div class="tile">
+                                                                             <img class="payImg" src="IMAGES/METROBANK_LOGO.png" alt="Metrobank">
+                                                                             <b>Metrobank</b>
+                                                                      </div>
+                                                               </label>
+                                                        </div>
+                                                        <p class="note">Ipapakita ang account details ng napili mong bank pagkatapos mong i-confirm.</p>
+                                                 </div>
+                                          </div>
+
+                                          <div class="method">
+                                                 <label class="methodHead">
+                                                        <input type="radio" name="payMethod" value="COD">
+                                                        <img class="payImg" src="IMAGES/COD_LOGO.png" alt="Cash on delivery">
+                                                        <span class="methodText">
+                                                               <span class="methodName">Cash on Delivery</span>
+                                                               <span class="methodDesc">Pay in cash</span>
+                                                        </span>
+                                                 </label>
+                                                 <div class="detail">
+                                                        <p class="note">Magbabayad ka in cash kapag natanggap mo na ang order mo.</p>
+                                                 </div>
+                                          </div>
+
+                                   </div>
+                            </section>
+
+                            <p class="error" id="error" role="alert"></p>
+                            <button type="submit" class="payBTN">Confirm payment</button>
+                     </form>
+
+                     <div class="success" id="success" hidden>
+                            <h2>Natanggap na ang details mo</h2>
+                            <p id="successText"></p>
+                            <a href="HOMEPAGE.html" class="payBTN">Back to Home</a>
+                     </div>
+
+                     <aside class="receipt">
+                            <p class="eyebrow">Reservation</p>
+                            <h2>Reservation summary</h2>
+                            <p class="date" id="today"></p>
+                            <div id="summaryItems"></div>
+                            <hr>
+                            <div class="sumRow"><span>Subtotal</span><span id="subtotal">₱0</span></div>
+                            <div class="sumRow"><span>Reservation fee</span><span>₱20,000</span></div>
+                            <hr>
+                            <div class="sumRow sumTotal"><span>Total</span><span id="total">₱0</span></div>
+                            <p class="slipNote">The reservation fee secures your selected vehicle.</p>
+                     </aside>
+              </div>
+       </main>
+
+       <script src="Cartlist.js"></script>
+       <script>
+       (() => {
+              const $ = id => document.getElementById(id);
+              const form = $('payForm');
+              const err = $('error');
+              const FEE = 20000;
+              const digits = v => v.replace(/\D/g, '');
+
+              // BUKSAN ANG DETAILS NG NAPILING METHOD
+              form.querySelectorAll('input[name="payMethod"]').forEach(radio => {
+                     radio.addEventListener('change', () => {
+                            form.querySelectorAll('.method').forEach(m => {
+                                   m.classList.toggle('open', m.querySelector('input[name="payMethod"]').checked);
+                            });
+                            err.textContent = '';
+                     });
+              });
+
+              // LALABAS LANG ANG CARD FORM KAPAG NAKAPILI NA NG VISA/MASTERCARD
+              form.querySelectorAll('input[name="brand"]').forEach(radio => {
+                     radio.addEventListener('change', () => { $('cardForm').hidden = false; err.textContent = ''; });
+              });
+
+              // AUTO-FORMAT NG INPUTS
+              $('cardNumber').addEventListener('input', e => {
+                     e.target.value = digits(e.target.value).slice(0, 16).replace(/(.{4})/g, '$1 ').trim();
+              });
+              $('cardExp').addEventListener('input', e => {
+                     const v = digits(e.target.value).slice(0, 4);
+                     e.target.value = v.length > 2 ? v.slice(0, 2) + '/' + v.slice(2) : v;
+              });
+              $('cardCvv').addEventListener('input', e => { e.target.value = digits(e.target.value).slice(0, 4); });
+              $('zip').addEventListener('input', e => { e.target.value = digits(e.target.value).slice(0, 4); });
+              $('mobile').addEventListener('input', e => { e.target.value = e.target.value.replace(/[^\d+\s-]/g, ''); });
+
+              // VALIDATION: [id ng field, test, mensahe]
+              const details = [
+                     ['fullName', v => v.trim().length > 1, 'Ilagay ang buong pangalan mo.'],
+                     ['mobile', v => /^(09|\+639)\d{9}$/.test(v.replace(/[\s-]/g, '')), 'Ilagay ang valid na mobile number, hal. 09123456789.'],
+                     ['email', v => /^\S+@\S+\.\S+$/.test(v.trim()), 'Ilagay ang valid na email address.'],
+                     ['street', v => v.trim().length > 2, 'Ilagay ang house no. at street.'],
+                     ['barangay', v => v.trim().length > 1, 'Ilagay ang barangay.'],
+                     ['city', v => v.trim().length > 1, 'Ilagay ang city o municipality.'],
+                     ['province', v => v.trim().length > 1, 'Ilagay ang province.'],
+                     ['zip', v => /^\d{4}$/.test(v), 'Dapat 4 digits ang ZIP code.']
+              ];
+
+              function validate(method) {
+                     for (const [id, ok, msg] of details) if (!ok($(id).value)) return [id, msg];
+                     const f = form.elements;
+                     if (!method) return ['', 'Pumili ng payment method.'];
+                     if (method === 'Bank' && !f.bank.value) return ['', 'Pumili ng bank (BPI, BDO, o Metrobank).'];
+                     if (method === 'Card') {
+                            const brand = f.brand.value;
+                            if (!brand) return ['', 'Pumili kung Visa o Mastercard.'];
+                            const num = digits($('cardNumber').value);
+                            if (num.length !== 16) return ['cardNumber', 'Dapat 16 digits ang card number.'];
+                            if (brand === 'Visa' && num[0] !== '4') return ['cardNumber', 'Hindi mukhang Visa ang card number na ito.'];
+                            if (brand === 'Mastercard' && !/^(5[1-5]|2[2-7])/.test(num)) return ['cardNumber', 'Hindi mukhang Mastercard ang card number na ito.'];
+                            if (!$('cardName').value.trim()) return ['cardName', 'Ilagay ang pangalan ng cardholder.'];
+                            const exp = $('cardExp').value;
+                            if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(exp)) return ['cardExp', 'Ilagay ang expiration date bilang MM/YY.'];
+                            const now = new Date();
+                            const y = 2000 + Number(exp.slice(3)), m = Number(exp.slice(0, 2));
+                            if (y < now.getFullYear() || (y === now.getFullYear() && m < now.getMonth() + 1)) return ['cardExp', 'Expired na ang card na ito.'];
+                            if (!/^\d{3,4}$/.test($('cardCvv').value)) return ['cardCvv', 'Dapat 3 o 4 digits ang CVV.'];
+                     }
+                     return null;
+              }
+
+              // SUBMIT (front-end lang ito: walang details na sine-save o ipinapadala)
+              form.addEventListener('submit', e => {
+                     e.preventDefault();
+                     err.textContent = '';
+                     const method = form.elements.payMethod.value;
+                     const bad = validate(method);
+                     if (bad) {
+                            const [id, msg] = bad;
+                            if (id) {
+                                   const el = $(id);
+                                   el.setCustomValidity(msg);
+                                   el.reportValidity();
+                                   el.addEventListener('input', () => el.setCustomValidity(''), { once: true });
+                            } else {
+                                   err.textContent = msg;
+                            }
+                            return;
+                     }
+
+                     let label = { GCash: 'GCash', Maya: 'Maya', COD: 'Cash on Delivery' }[method];
+                     if (method === 'Card') label = `${form.elements.brand.value} card na nagtatapos sa ${digits($('cardNumber').value).slice(-4)}`;
+                     if (method === 'Bank') label = `Bank Transfer (${form.elements.bank.value})`;
+
+                     const address = ['street', 'barangay', 'city', 'province', 'zip'].map(id => $(id).value.trim()).join(', ');
+                     $('successText').textContent =
+                            `Pangalan: ${$('fullName').value.trim()}\nMobile: ${$('mobile').value.trim()}\nAddress: ${address}\nPayment method: ${label}`;
+
+                     form.reset();
+                     form.hidden = true;
+                     $('success').hidden = false;
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+              });
+
+              // RESERVATION SLIP (galing sa cart sa localStorage)
+              $('today').textContent = new Date().toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' });
+              const cart = typeof getCart === 'function' ? getCart() : [];
+              const sub = cart.reduce((s, i) => s + i.price * i.qty, 0);
+              $('summaryItems').innerHTML = cart.length
+                     ? cart.map(i => { const img = i.image || i.img; return `<div class="sumItem">${img ? `<img class="sumThumb" src="${img}" alt="">` : ''}<div class="sumInfo"><b>${i.name}</b><small>Qty ${i.qty}</small></div><span class="sumPrice">₱${(i.price * i.qty).toLocaleString()}</span></div>`; }).join('')
+                     : '<p class="muted">Walang laman ang cart mo.</p>';
+              $('subtotal').textContent = '₱' + sub.toLocaleString();
+              $('total').textContent = '₱' + (cart.length ? sub + FEE : 0).toLocaleString();
+       })();
+       </script>
+</body>
+</html>

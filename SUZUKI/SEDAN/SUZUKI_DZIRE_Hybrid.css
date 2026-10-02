@@ -546,16 +546,15 @@ footer{
     overflow: hidden;
     position: relative;
     margin-top: 250px;
-    height: 200px;
+    height: 100px;
     background-color: white;
 }
 
 footer p{
     font-family: 'Manrope';
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     text-align: center;
-    line-height: 150px;
 }
 
 .Name{
