@@ -75,3 +75,7 @@ input {
     border-radius: 50px;
     font-size: 16px;
 }
+
+input:focus{
+    background-color: #b3b3b349;
+}

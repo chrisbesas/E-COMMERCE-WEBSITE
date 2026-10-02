@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Your Cart | AutoBayPh</title>
+       <link rel="stylesheet" href="Cartlist.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+       <header>
+              <div class="off_list_menu">
+                     <div class="close_menu">&times;</div>
+              <ul>
+                     <li>Home</li>
+                     <li>Settings</li>
+                     <li>Browse Cars</li>
+                     <li>Brands</li>
+                     <li>Deals & Offers</li>
+                     <li>Favorites</li>
+                     <li>Cart</li>
+                     <li>Account</li>
+                     <li>Contact us</li>
+                     <li>About Us</li>
+              </ul>
+              </div>
+              <nav>
+                     <div class="hamburger_menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                     </div>
+                     <h1 class="title">AutoBayPh</h1>
+                     <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Search...">
+                            <button id="searchBtn">Search</button>
+                     </div>
+                     <div id="searchResults"></div>
+                     <ul>
+                            <li><a href="HOMEPAGE.html">Home</a></li>
+                            <li class="dropdown">
+                                   <a href="#" class="dropdown-toggle">Categories ▾</a>
+                                   <ul class="dropdown-menu">
+                                          <li><a href="#sedan">Sedan</a></li>
+                                          <li><a href="#">SUV</a></li>
+                                          <li><a href="#">Pickup Truck</a></li>
+                                          <li><a href="#">Hatchback</a></li>
+                                          <li><a href="#">Van</a></li>
+                                          <li><a href="#">Motorcycle</a></li>
+                                   </ul>
+                            </li>
+                            <li><a href="CARTPAGE.html">Cart</a></li>
+                            <li><a href="ABOUTPAGE.html">About</a></li>
+                            <li><a href="#">Settings</a></li>
+                     </ul>
+              </nav>
+       </header>
+
+       <main class="cartPage">
+              <h1 class="cartTitle">Your Cart</h1>
+
+              <div class="cartLayout">
+                     <div class="cartItems" id="cartItems">
+                            <!-- Dynamic na pinopopulate ito ng cart.js base sa laman ng localStorage -->
+                     </div>
+
+                     <div class="cartSummary">
+                            <h2>Order Summary</h2>
+                            <div class="summaryRow">
+                                   <span>Subtotal</span>
+                                   <span id="subtotalValue">₱0</span>
+                            </div>
+                            <div class="summaryRow">
+                                   <span>Reservation Fee</span>
+                                   <span id="reservationFeeValue">₱20,000</span>
+                            </div>
+                            <hr class="summaryLine">
+                            <div class="summaryRow summaryTotal">
+                                   <span>Total</span>
+                                   <span id="totalValue">₱0</span>
+                            </div>
+                            <a href="#" class="checkoutBTN">Proceed to Checkout</a>
+                            <a href="HOMEPAGE.html" class="continueBTN">Continue Browsing</a>
+                     </div>
+              </div>
+       </main>
+
+       <footer>
+              <p>
+                     Disclaimer: All information provided is subject to change without notice. And this website is for personal project only and not affiliated with any car brand.
+              </p>
+       </footer>
+
+       <script src="cart.js"></script>
+       <script>
+              const hamMenu = document.querySelector(`.hamburger_menu`);
+              const offListMenu = document.querySelector(`.off_list_menu`);
+              const closeMenu = document.querySelector(`.close_menu`);
+
+              hamMenu.addEventListener(`click`, () => {
+                     hamMenu.classList.toggle(`active`);
+                     offListMenu.classList.toggle(`active`);
+              })
+
+              closeMenu.addEventListener(`click`, () => {
+                     hamMenu.classList.remove(`active`);
+                     offListMenu.classList.remove(`active`);
+              })
+
+              const RESERVATION_FEE = 20000;
+
+              function renderCart() {
+                     const cart = getCart();
+                     const container = document.getElementById('cartItems');
+                     const subtotalEl = document.getElementById('subtotalValue');
+                     const totalEl = document.getElementById('totalValue');
+
+                     if (cart.length === 0) {
+                            container.innerHTML = `<p class="emptyCart">Wala ka pang laman sa cart. <a href="HOMEPAGE.html">Mag-browse ng cars</a>.</p>`;
+                            subtotalEl.textContent = '₱0';
+                            totalEl.textContent = '₱0';
+                            return;
+                     }
+
+                     container.innerHTML = cart.map(item => `
+                            <div class="cartItem" data-id="${item.id}">
+                                   <img src="${item.image}" alt="${item.name}" class="cartItemImg">
+                                   <div class="cartItemInfo">
+                                          <p class="cartItemName">${item.name}</p>
+                                          <p class="cartItemSpec">${item.spec}</p>
+                                          <p class="cartItemPrice">₱${item.price.toLocaleString()}</p>
+                                   </div>
+                                   <div class="cartItemQty">
+                                          <button class="qtyBtn minusBtn">−</button>
+                                          <span class="qtyValue">${item.qty}</span>
+                                          <button class="qtyBtn plusBtn">+</button>
+                                   </div>
+                                   <button class="removeBtn" aria-label="Remove item">&times;</button>
+                            </div>
+                     `).join('');
+
+                     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+                     subtotalEl.textContent = `₱${subtotal.toLocaleString()}`;
+                     totalEl.textContent = `₱${(subtotal + RESERVATION_FEE).toLocaleString()}`;
+
+                     container.querySelectorAll('.plusBtn').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                   const id = btn.closest('.cartItem').dataset.id;
+                                   const item = getCart().find(c => c.id === id);
+                                   updateQty(id, item.qty + 1);
+                                   renderCart();
+                            });
+                     });
+
+                     container.querySelectorAll('.minusBtn').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                   const id = btn.closest('.cartItem').dataset.id;
+                                   const item = getCart().find(c => c.id === id);
+                                   updateQty(id, item.qty - 1);
+                                   renderCart();
+                            });
+                     });
+
+                     container.querySelectorAll('.removeBtn').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                   const id = btn.closest('.cartItem').dataset.id;
+                                   removeFromCart(id);
+                                   renderCart();
+                            });
+                     });
+              }
+
+              renderCart();
+       </script>
+</body>
+</html>

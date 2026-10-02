@@ -177,3 +177,8 @@ content h1 {
     margin-left: 20px;
 }
 
+.pdfContainer {
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+}
