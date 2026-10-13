@@ -1018,7 +1018,7 @@ li a {
 footer {
     overflow: hidden;
     position: relative;
-    height: 200px;
+    height: 70px;
     background-color: white;
 }
 
@@ -1027,7 +1027,7 @@ footer p {
     font-size: 16px;
     color: black;
     text-align: center;
-    line-height: 200px;
+    line-height: 70px;
     margin: 0;
     padding: 0 40px;
 }
@@ -1086,23 +1086,4 @@ footer p {
 .continueBTN:hover {
     border-color: white;
     color: white;
-}
-
-/* !!FOOTER */
-
-footer {
-    overflow: hidden;
-    position: relative;
-    height: 200px;
-    background-color: white;
-}
-
-footer p {
-    font-family: 'Manrope';
-    font-size: 16px;
-    color: black;
-    text-align: center;
-    line-height: 200px;
-    margin: 0;
-    padding: 0 40px;
 }
