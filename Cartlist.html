@@ -35,7 +35,7 @@
                             <span></span>
                             <span></span>
                      </div>
-                     <h1 class="title">AutoBayPh</h1>
+                     <a href="HOMEPAGE.html" class="title">AutoBayPh</a>
                      <div class="search-container">
                             <input type="text" id="searchInput" placeholder="Search...">
                             <button id="searchBtn">Search</button>
@@ -84,7 +84,8 @@
                                    <span>Total</span>
                                    <span id="totalValue">₱0</span>
                             </div>
-                            <a href="#" class="checkoutBTN">Proceed to Checkout</a>
+                            <p id="checkoutError" role="alert" style="color:#e53935; font-size:0.9rem; margin:0 0 10px;"></p>
+                            <a href="PAYMENTPAGE.html" class="checkoutBTN">Proceed to Checkout</a>
                             <a href="HOMEPAGE.html" class="continueBTN">Continue Browsing</a>
                      </div>
               </div>
@@ -176,6 +177,19 @@
               }
 
               renderCart();
+
+              // CHECKOUT: bawal pumunta sa payment page kung walang laman ang cart
+              const checkoutBtn = document.querySelector('.checkoutBTN');
+              const checkoutError = document.getElementById('checkoutError');
+
+              checkoutBtn.addEventListener('click', (e) => {
+                     if (getCart().length === 0) {
+                            e.preventDefault();
+                            checkoutError.textContent = 'Your cart is empty. Please add a vehicle first before proceeding to checkout.';
+                            return;
+                     }
+                     checkoutError.textContent = '';
+              });
        </script>
 </body>
 </html>
